@@ -2,49 +2,59 @@
 @import url('composants/message.css');
 @import url('composants/popup.css');
 @import url('composants/setup.css');
+@import url('composants/profil.css');
 
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    height: 1080px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 1080px;
+}
+
+.one, .three {
+  background-color: #B2BF9F;
+}
+
+.user {
+  width: 25%;
+  animation-name: transition_gauche;
+  animation-duration: 5s; 
+}
+
+@keyframes transition_gauche {
+  from {
+    transform: translateX(-100%);
   }
 
-  .one {
-    background-color: #B2BF9F;
+  to {
+    transform: translateX(0%);
   }
-  .user {
-    width: 25%;
-  }
+}
 
-  .one p,
-  .one h1 {
-    text-align: center;
-    margin-top: 1em;
-  }
+.one h4,
+.one h1 {
+  text-align: center;
+  margin-top: 1em;
+}
 
-  .two {
-    background-color: #96A086;
-  }
+.two {
+  background-color: #96A086;
+}
 
-  .recherche {
-    border-radius: 50px;
-    background-color: #FFF6DE;
-    width: 70%;
-    height: 3.5em;
-    font-size: 1.4em;    
-    text-align: center;
-    display: block;
-    margin: 6% auto;
-  }
-  
-  h1 {
-    text-align: center;
-  }
+.recherche {
+  border-radius: 50px;
+  background-color: #FFF6DE;
+  width: 70%;
+  height: 3.5em;
+  font-size: 1.4em;    
+  text-align: center;
+  display: block;
+  margin: 6% auto;
+}
 
-  .three {
-    background-color: #B2BF9F; 
-  }
+.pseudotweet {
+  text-align: center;
+}
 
 #logo {
   margin-left: 20em;
@@ -54,13 +64,14 @@
 .menu {
   background-color: #FFF6DE;
   border-radius: 25px;
-  margin-left: 13.7em;
-  margin-top: 1em;
-  width: 12em;
-  height: 3em;
+  margin-left: 20.7em;
+  margin-top: 2em;
+  width: 14em;
+  height: 4em;
   text-align: center;
   vertical-align:middle;
   line-height: 3em;
+  border: 1px solid  #FFF6DE;
 }
 
 .menu p {
@@ -71,7 +82,14 @@
   border: 2px solid #1F1D1E;
 }
 
-#faireunmessage {
+.faireunmessage {
   margin-top: 45em;
   margin-left: 9em;
 }
+
+.nothing {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 10%;
+}
+

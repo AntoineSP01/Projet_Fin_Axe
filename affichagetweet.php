@@ -18,7 +18,7 @@ try {
     
     if ($result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $nom_utilisateur = $row["tweet_nom"];
+            $pseudo = $row["tweet_nom"];
             $id = $row["tweet_id"];
             $contenu = $row["tweet_contenu"];
             $date_creation = $row["tweet_date"];
@@ -27,7 +27,7 @@ try {
             $tweets_html .= "<div class='message messagesuivant'>";
             $tweets_html .= "<div class='entete'>";
             $tweets_html .= "<div><img src='Image/original.jpeg' alt='Photo de profil' class='image-ronde'></div>";
-            $tweets_html .= "<div class='nomheure'> <h2>" .$nom_utilisateur . "</h2> <br>" . $date_diff . "</div>";
+            $tweets_html .= "<div class='nomheure'> <h2>" .$pseudo . "</h2> <br>" . $date_diff . "</div>";
             $tweets_html .= "<div class='suivre'> <img src='Image/Logo_plus.png' alt='logo plus'> <p>suivre</p></div>";
             $tweets_html .= "<hr>";
             $tweets_html .= "</div>";
@@ -35,7 +35,7 @@ try {
             $tweets_html .= "<p>" .htmlspecialchars($contenu). "</p>";
             $tweets_html .= "</div>";
             $tweets_html .= "<div class='logo'>";
-            $tweets_html .= "<img src='Image/Logo_dustbin.png' id='dustbin' alt='logo de partage' onclick='openpopup(".$id.")' >";
+            // $tweets_html .= "<img src='Image/Logo_dustbin.png' id='dustbin' alt='logo de partage' onclick='openpopup(".$id.")' >";
             $tweets_html .= "<img src='Image/Logo_coeur.png' alt='logo de coeur'>";
             $tweets_html .= "<img src='Image/Logo_reponse.png' alt='logo de reponse'>";
             $tweets_html .= "<img src='Image/Logo_partage.png' alt='logo de partage'>";

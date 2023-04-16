@@ -9,7 +9,8 @@
   }
 
 .image-ronde{
-    width : 90px; height : 90px;
+    width : 90px; 
+    height : 90px;
     border: none;
     -moz-border-radius : 45px;
     -webkit-border-radius : 45px;

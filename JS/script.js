@@ -3,7 +3,7 @@ const popup = document.querySelector(".popup");
 
   setTimeout(function() {
     popup.style.display = "block";
-  }, 1000);
+  }, 10000);
 
 
   const button1 = document.querySelector(".popup-buttonconnexion");

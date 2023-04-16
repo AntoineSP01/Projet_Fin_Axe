@@ -5,6 +5,7 @@ if (!isset($_SESSION['mail'])) {
     header('Location: index.php');
     exit();
 }
+$user = $_SESSION['mail'];
 
 // Connexion à la base de données avec PDO
 $servername = "localhost";
@@ -21,4 +22,5 @@ try {
 
 require_once 'infousers.php';
 require_once 'Connecter.php';
+
 ?>

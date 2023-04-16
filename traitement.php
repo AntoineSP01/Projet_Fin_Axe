@@ -25,16 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $contenu_error = "Veuillez remplir le champ 'Votre message'";
         echo $contenu_error;
     } else {
-        $nom = $user['users_nom'];
+        $nom = $user['users_pseudo'];
+        $tag = $_POST['tag'];
         $contenu = $_POST['contenu'];
         $date = date('Y-m-d H:i:s'); // Récupération de la date et de l'heure actuelles
 
         // Insertion des données dans la base de données
-        $sql = "INSERT INTO tweet (tweet_nom, tweet_contenu, tweet_date) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO tweet (tweet_nom, tweet_contenu, tweet_tag, tweet_date) VALUES (?, ?, ?, ?)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$nom, $contenu, $date]);
+        $stmt->execute([$nom, $contenu, $tag, $date]);
 
-        header("Location: affichagetweet.php");
+        header("Location: connecter2.php");
         exit();
     }
 }

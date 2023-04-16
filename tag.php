@@ -1,7 +1,55 @@
 <?php
+session_start();
+if (!isset($_SESSION['mail'])) {
+    header('Location: index.php');
+    exit();
+}
+$user = $_SESSION['mail'];
+
 require_once 'ConnexiontoBDD.php';
-require_once 'affichagetweet.php';
-require_once 'connecter2.php';
+require_once 'infousers.php';
+require 'afficher_date_relative.php';
+
+$nomtag = $_POST['tag'];
+
+$sql = "SELECT * FROM tweet WHERE tweet_tag = :nomtag ORDER BY tweet_date DESC";
+$result = $conn->prepare($sql);
+$result->execute(['nomtag' => $nomtag]);
+
+
+$tweets_html = "";
+    
+    if ($result->rowCount() > 0) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $pseudo = $row["tweet_nom"];
+            $id = $row["tweet_id"];
+            $contenu = $row["tweet_contenu"];
+            $date_creation = $row["tweet_date"];
+            $date_diff = afficher_date_relative($date_creation);
+            
+            $tweets_html .= "<div class='message messagesuivant'>";
+            $tweets_html .= "<div class='entete'>";
+            $tweets_html .= "<div><img src='Image/original.jpeg' alt='Photo de profil' class='image-ronde'></div>";
+            $tweets_html .= "<div class='nomheure'> <h2>" .$pseudo . "</h2> <br>" . $date_diff . "</div>";
+            $tweets_html .= "<div class='suivre'> <img src='Image/Logo_plus.png' alt='logo plus'> <p>suivre</p></div>";
+            $tweets_html .= "<hr>";
+            $tweets_html .= "</div>";
+            $tweets_html .= "<div class='texte'>";
+            $tweets_html .= "<p>" .htmlspecialchars($contenu). "</p>";
+            $tweets_html .= "</div>";
+            $tweets_html .= "<div class='logo'>";
+            $tweets_html .= "<img src='Image/Logo_dustbin.png' id='dustbin' alt='logo de partage' onclick='openpopup(".$id.")' >";
+            $tweets_html .= "<img src='Image/Logo_coeur.png' alt='logo de coeur'>";
+            $tweets_html .= "<img src='Image/Logo_reponse.png' alt='logo de reponse'>";
+            $tweets_html .= "<img src='Image/Logo_partage.png' alt='logo de partage'>";
+            $tweets_html .= "</div>";
+            $tweets_html .= "</div>";
+        }
+    } else {
+        $tweets_html .= "<p class='nothing'> Il n'y a pas de résultats correspondant à votre demande</p>";
+    }
+
+// Affichage des tweets
 
 
 ?>
@@ -13,7 +61,6 @@ require_once 'connecter2.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
     
 </head>
 <body>
@@ -78,13 +125,13 @@ require_once 'connecter2.php';
     </div>
 
     <div class="two">
-        <div class="transition">
+        <div>
             <form method="POST" action="recherche2.php">
                 <input type="text" name="recherche" placeholder="Recherche" class="recherche">
             </form>
         </div>
 
-        <div class="tag transition">
+        <div class="tag">
             <div id="Nature">                
                 <form action="tag.php" method="POST"> 
                     <input type="hidden" name="tag" value="Nature">
@@ -102,7 +149,7 @@ require_once 'connecter2.php';
             <div id="Cinéma">            
                 <form action="tag.php" method="POST"> 
                     <input type="hidden" name="tag" value="Cinéma">
-                    <button class="box cinema" type="submit">Cinéma </button>
+                    <button class="box cinéma" type="submit">Cinéma </button>
                 </form>
             </div>
 
@@ -160,7 +207,7 @@ require_once 'connecter2.php';
         <a href="Connecter.php"> <div class="reset">Réinitialiser les Tags </div></a>
 
         
-        <div class="transition_inverse">
+        <div>
         <?php echo $tweets_html; ?>
         </div>
                <br><br><br>
@@ -197,5 +244,4 @@ require_once 'connecter2.php';
 <script src="JS/supprimer.js"></script>
 <script src="JS/deconnexion.js"></script>
 <script src="JS/tag.js"></script>
-</body>
 </html>

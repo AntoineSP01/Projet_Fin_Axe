@@ -1,31 +1,154 @@
 .tag {
-    margin-top: 3em;
-    display: grid;
-    grid-column-gap: 1em;
-    grid-row-gap: 0.5em;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    text-align: center;
-    margin-left: 10%; 
-    margin-right: 10%;   
+  margin-top: 3em;
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 0.5em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  margin-left: 10%; 
+  margin-right: 10%;
+    
+}
+
+.transition {
+  animation-name: transition_haut;
+  animation-duration: 5s; 
+}
+
+.transition_inverse {
+  animation-name: transition_bas;
+  animation-duration: 5s; 
+}
+
+@keyframes transition_haut {
+  from {
+    transform: translateY(-150%);
   }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes transition_bas {
+  from {
+    transform: translateY(10%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
 
 .box {
-    border-radius: 18px;
-    background-color: #FFF6DE;
-    height: 4em;
-    vertical-align:middle;
-    line-height: 4em;
-    color: #1F1D1E;
-  }
+  border-radius: 18px;
+  background-color: #FFF6DE;
+  border: 1px solid  #FFF6DE;
+  height: 5.5em;
+  width: 100%;
+  vertical-align:middle;
+  line-height: 4em;
+  color: #1F1D1E;
+  font-size: 15px;
+}
 
-  .box1 {
-    border-radius: 18px;
-    background-color: #FFF6DE;
-    margin-top: 1%;
-    margin-left: 10%; 
-    margin-right: 10%; 
-    height: 2em;
-    vertical-align:middle;
-    line-height: 2em;
-    text-align: center;
-  }
+.reset {
+  border-radius: 18px;
+  background-color: #FFF6DE;
+  margin-top: 1%;
+  margin-left: 10%; 
+  margin-right: 10%; 
+  height: 2em;
+  vertical-align:middle;
+  line-height: 2em;
+  text-align: center;
+}
+
+#tag {
+  text-align: center;
+  font-size: 20px;
+}
+
+.nature {
+  transition: all 1s ease-out;
+}
+  
+  .nature:hover,
+  .nature:focus {
+  background-color: green;
+  border: 1px solid green;
+}
+
+.nature {
+  transition: all 1s ease-out;
+}
+  
+  .nature:hover,
+  .nature:focus {
+  background-color: green;
+  border: 1px solid green;
+}
+
+.nature, .divertissement, .cinéma, .blagues, .politique, .technologie,
+.culture, .gaming, .conseil, .autre, .reset{
+  transition: all 1s ease-out;
+}
+  
+ 
+.nature:hover {
+  background-color: green;
+  border: 1px solid green;
+}
+ 
+.divertissement:hover {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.cinéma:hover {
+  background-color: rgb(79, 79, 234);
+  border: 1px solid rgb(79, 79, 234);
+}
+
+.blagues:hover {
+  background-color: yellow;
+  border: 1px solid yellow;
+}
+
+.politique:hover {
+  background-color: brown;
+  border: 1px solid brown;
+  color: white;
+}
+
+.technologie:hover {
+  background-color: orange;
+  border: 1px solid orange;
+}
+
+.culture:hover {
+  background-color: white;
+  border: 1px solid white;
+}
+
+.gaming:hover {
+  background-color: purple;
+  border: 1px solid purple;
+}
+
+.conseil:hover {
+  background-color: grey;
+  border: 1px solid grey;
+}
+
+.autre:hover {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.reset:hover {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
