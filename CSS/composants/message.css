@@ -95,3 +95,11 @@ hr {
   width: 2em;
   height: 3em;
 }
+
+.container_media {
+  height: 200px;
+}
+.media {
+  max-height: 100%;
+  width: auto;
+}

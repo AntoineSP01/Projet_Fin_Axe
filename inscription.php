@@ -2,18 +2,7 @@
 
 session_start();
 
-// Connexion à la base de données avec PDO
-$dsn = "mysql:host=localhost;dbname=twitterlike";
-$username = "root";
-$password = "";
-
-try {
-  $conn = new PDO($dsn, $username, $password);
-  // Activation des exceptions en cas d'erreur
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-  die("Erreur de connexion à la base de données : " . $e->getMessage());
-}
+require 'ConnexiontoBDD.php';
 
 // Récupération des données du formulaire d'inscription
 $nom = $_POST['nom'];

@@ -21,6 +21,7 @@ try {
             $pseudo = $row["tweet_nom"];
             $id = $row["tweet_id"];
             $contenu = $row["tweet_contenu"];
+            $media = $row["tweet_media"];
             $date_creation = $row["tweet_date"];
             $date_diff = afficher_date_relative($date_creation);
             
@@ -32,7 +33,10 @@ try {
             $tweets_html .= "<hr>";
             $tweets_html .= "</div>";
             $tweets_html .= "<div class='texte'>";
-            $tweets_html .= "<p>" .htmlspecialchars($contenu). "</p>";
+            $tweets_html .= "<p>" .htmlspecialchars($contenu). "<br><br><br></p>";
+            $tweets_html .= "<div class='container_media'>";
+            $tweets_html .= "<img class='media' src='".$media ."'>";
+            $tweets_html .= "</div>";
             $tweets_html .= "</div>";
             $tweets_html .= "<div class='logo'>";
             // $tweets_html .= "<img src='Image/Logo_dustbin.png' id='dustbin' alt='logo de partage' onclick='openpopup(".$id.")' >";

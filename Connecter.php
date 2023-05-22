@@ -3,7 +3,6 @@ require_once 'ConnexiontoBDD.php';
 require_once 'affichagetweet.php';
 require_once 'connecter2.php';
 
-
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +20,13 @@ require_once 'connecter2.php';
         <div class="popup-contenttweeter">
             <span class="popup-closetweeter"></span>
             <h2>Ecrire un message !</h2>
-            <form action="traitement.php" method="post">
+            <form action="traitement.php" method="post" enctype="multipart/form-data">
                 <div>
                     <h1 class="pseudotweet"><?php echo $user['users_pseudo']; ?></h1>
                 </div>
                 <div>
                     <p>
-                        <textarea type="text" placeholder="Votre message" name="contenu" class="tweet"></textarea>
+                        <textarea id="message" type="text" placeholder="Votre message" name="contenu" class="tweet"></textarea>
                     </p>
                 </div>
                 <div id="tag">
@@ -45,10 +44,14 @@ require_once 'connecter2.php';
                         <option value="Autre">Autre</option>
                     </select>
                 </div>
+                <div id="media">
+                    <input type="file" name="media" accept=".jpg, .gif, .png">
+                </div>
                 <div>
                     <input type="submit" value="Publier" class="recherche" id="confirmer">
                 </div>
             </form>
+            
         </div>
     </div>
 
@@ -194,6 +197,7 @@ require_once 'connecter2.php';
 
 </div>
 <script src="JS/connecter.js"></script>
+<script src="JS/localstorage.js"></script>
 <script src="JS/supprimer.js"></script>
 <script src="JS/deconnexion.js"></script>
 <script src="JS/tag.js"></script>

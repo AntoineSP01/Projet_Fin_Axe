@@ -77,7 +77,7 @@ if ($result->rowCount() > 0) {
             <div class="popup-contenttweeter">
                 <span class="popup-closetweeter"></span>
                 <h2>Ecrire un message !</h2>
-                <form action="traitement.php" method="post">
+                <form action="traitement.php" method="post" enctype="multipart/form-data">
                     <div>
                         <h1 class="pseudotweet"><?php echo $user['users_pseudo']; ?></h1>
                     </div>
@@ -100,6 +100,9 @@ if ($result->rowCount() > 0) {
                             <option value="Conseil">Conseil</option>
                             <option value="Autre">Autre</option>
                         </select>
+                    </div>
+                    <div id="media">
+                        <input type="file" name="media">
                     </div>
                     <div>
                         <input type="submit" value="Publier" class="recherche" id="confirmer">

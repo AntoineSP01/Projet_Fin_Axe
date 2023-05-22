@@ -1,16 +1,6 @@
 <?php
 require 'afficher_date_relative';
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "twitterlike";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Erreur de connexion à la base de données : " . $e->getMessage());
-}
+require 'ConnexiontoBDD.php';
 
 // Récupérer le terme de recherche depuis le formulaire
 $query = $_GET['recherche'];
