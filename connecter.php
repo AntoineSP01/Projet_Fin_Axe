@@ -1,78 +1,84 @@
 <?php
-session_start();
-if (!isset($_SESSION['mail'])) {
-    header('Location: index.php');
-    exit();
-}
-$user = $_SESSION['mail'];
-
 require_once 'Traitement/ConnexiontoBDD.php';
 require_once 'Traitement/infousers.php';
-require 'Traitement/afficher_date_relative.php';
 
-// Récupérer le terme de recherche depuis le formulaire
-$query = $_GET['recherche'];
+if (isset($_GET['tag'])) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    if (!isset($_SESSION['mail'])) {
+        header('Location: index.php');
+        exit();
+    }
+    // Le paramètre 'tag' est présent dans l'URL
+    require 'Traitement/afficher_date_relative.php';
+   
 
-// Requête SQL pour rechercher des produits
-$sql = "SELECT * FROM tweet WHERE tweet_nom LIKE :query OR tweet_contenu LIKE :query ORDER BY tweet_date DESC";
-$result = $conn->prepare($sql);
-$result->bindValue(':query', '%' . $query . '%');
-$result->execute();
-
-$tweets_html = "";
+    $nomtag = $_GET['tag'];
+    $sql = "SELECT * FROM tweet WHERE tweet_tag = :nomtag ORDER BY tweet_date DESC";
+    $result = $conn->prepare($sql);
+    $result->execute(['nomtag' => $nomtag]);
 
 
-if ($result->rowCount() > 0) {
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        $udo = $row["tweet_nom"];
-        $id = $row["tweet_id"];
-        $contenu = $row["tweet_contenu"];
-        $media = $row["tweet_media"];
-        $date_creation = $row["tweet_date"];
-        $date_diff = afficher_date_relative($date_creation);
+    $tweets_html = "";
         
-        $sql = "SELECT users_pdp FROM users WHERE users_pseudo = :pseudo";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute(['pseudo' => $udo]);
-        $users = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!empty($users['users_pdp'])) {
-            $media_pdp = $users['users_pdp'];
+        if ($result->rowCount() > 0) {
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                $pseudo = $row["tweet_nom"];
+                $id = $row["tweet_id"];
+                $contenu = $row["tweet_contenu"];
+                $media = $row["tweet_media"];
+                $date_creation = $row["tweet_date"];
+                $date_diff = afficher_date_relative($date_creation);
+                
+                $sql = "SELECT users_pdp FROM users WHERE users_pseudo = :pseudo";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute(['pseudo' => $pseudo]);
+                $users = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+                if (!empty($users['users_pdp'])) {
+                    $media_pdp = $users['users_pdp'];
+                } else {
+                    $media_pdp = 'Media/PhotoProfil/Base.jpg'; // Remplacez par l'image de profil par défaut que vous voulez utiliser
+                }
+    
+    
+                $tweets_html .= "<div class='message messagesuivant'>";
+                $tweets_html .= "<div class='entete'>";
+                $tweets_html .= "<div><img src='". $media_pdp ."' alt='Photo de profil' class='image-ronde'></div>";
+                $tweets_html .= "<div class='nomheure'> <h2><a href='profil.php?pseudo=" . urlencode($pseudo) . "'>" .$pseudo . "</a></h2> <br>" . $date_diff . "</div>";
+                $tweets_html .= "<div class='suivre'> <img src='Image/Logo_plus.png' alt='logo plus'> <p>suivre</p></div>";
+                $tweets_html .= "</div>";
+                $tweets_html .= "<div class='texte'>";
+                $tweets_html .= "<p>" .htmlspecialchars($contenu). "</p>";
+                if ($media == "") {
+                    // $tweets_html .= "<div class='container_media'> <img class='media' src='".$media ."'> </div>";
+                    
+                } else {
+                    $tweets_html .= "<br><div class='container_media'> <img class='media' src='".$media ."'> </div>"; 
+                }
+                $tweets_html .= "</div>";
+                $tweets_html .= "<div class='logo'>";
+                $tweets_html .= "<img src='Image/Logo_coeur.png' alt='logo de coeur'>";
+                $tweets_html .= "<img src='Image/Logo_reponse.png' alt='logo de reponse'>";
+                $tweets_html .= "<img src='Image/Logo_partage.png' alt='logo de partage'>";
+                $tweets_html .= "</div>";
+                $tweets_html .= "</div>";
+            }
         } else {
-            $media_pdp = 'Media/PhotoProfil/Base.jpg'; // Remplacez par l'image de profil par défaut que vous voulez utiliser
+            $tweets_html .= "<p class='nothing'> Il n'y a pas de résultats correspondant à votre demande</p>";
         }
-
-        $tweets_html .= "<div class='message messagesuivant'>";
-        $tweets_html .= "<div class='entete'>";
-        $tweets_html .= "<div><img src='". $media_pdp ."' alt='Photo de profil' class='image-ronde'></div>";
-        $tweets_html .= "<div class='nomheure'> <h2><a href='profil.php?pseudo=" . urlencode($udo) . "'>" .$udo . "</a></h2> <br><p>" . $date_diff . "</p></div>";
-        $tweets_html .= "<div class='suivre'> <img src='Image/Logo_plus.png' alt='logo plus'> <p>suivre</p></div>";
-        $tweets_html .= "</div>";
-        $tweets_html .= "<div class='texte'>";
-        $tweets_html .= "<p>" .htmlspecialchars($contenu). "</p>";
-        if ($media == "") {
-            // $tweets_html .= "<div class='container_media'> <img class='media' src='".$media ."'> </div>";
-            
-        } else {
-            $tweets_html .= "<br><div class='container_media'> <img class='media' src='".$media ."'> </div>"; 
-        }
-        $tweets_html .= "</div>";
-        $tweets_html .= "<div class='logo'>";
-        $tweets_html .= "<img src='Image/Logo_coeur.png' alt='logo de coeur'>";
-        $tweets_html .= "<img src='Image/Logo_reponse.png' alt='logo de reponse'>";
-        $tweets_html .= "<img src='Image/Logo_partage.png' alt='logo de partage'>";
-        $tweets_html .= "</div>";
-        $tweets_html .= "</div>";
-        }
-
-        
-
 } else {
-    $tweets_html .= "<p class='nothing'> Il n'y a pas de résultats correspondant à votre demande</p>";
+    // Le paramètre 'tag' n'est pas présent dans l'URL
+    // Afficher tous les tweets
+    require_once 'Traitement/affichagetweet.php';
+
 }
 
-// Fermer la connexion à la base de donnée
-$conn = null; 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -140,14 +146,14 @@ $conn = null;
             </div>
         </div>
     </div>
-
+    
     <nav id="mySidebar">
         <a href="javascript:void(0)" onclick="closeNav()">Close</a>
-        <a href="   connecter.php"><p>Explorer</p></a>
+        <a href="connecter.php"><p>Explorer</p></a>
         <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>"><p>Mon profil</p></a>
         <a href="parametre.php">Paramètre</a>
         <form action="Traitement/deconnexion.php" method="POST">
-            <button class="deconnexion" type="submit"><p><a href="">Déconnexion</a> </p></button>
+            <button class="deconnexion " type="submit"><p><a>Déconnexion</a> </p></button>
         </form>
     </nav>
 
@@ -163,14 +169,14 @@ $conn = null;
         <a href="parametre.php">Paramètre</a>
         <button class="deconnexion faireunmessage"><p><a >Faire un message</a></p></button>
         <form action="Traitement/deconnexion.php" method="POST">
-            <button class="deconnexion" type="submit"><p><a href="">Déconnexion</a> </p></button>
+            <button class="deconnexion " type="submit"><p><a>Déconnexion</a> </p></button>
         </form>
     </nav>
 
     <div class="wrapper">
 
         <div class="one">
-            <div class="fixed user">
+            <div class="fixed user animation_gauche">
                 <h1>Bienvenue <?php echo $user['users_pseudo']; ?> !</h1>
                 <h4>Vous êtes connecté.</h4>
                 <br>
@@ -180,13 +186,13 @@ $conn = null;
 
         <div class="two">
             <button id="openbtn_480" class="fixed" onclick="openNav_480()">☰</button>
-            <div class="unused-class">
+            <div class="unused-class transition">
                 <form method="GET" action="recherche.php">
                     <input type="text" name="recherche" placeholder="Recherche" class="recherche">
                 </form>
             </div>
 
-            <div class="unused-class2" id="tag">
+            <div class="unused-class2 transition" id="tag">
                 <div id="Nature">                
                     <form action="connecter.php" method="GET"> 
                         <input type="hidden" name="tag" value="Nature">
@@ -262,7 +268,7 @@ $conn = null;
             <a href="connecter.php"> <div class="reset">Réinitialiser les Tags </div></a>
 
             
-            <div class="unused-class3">
+            <div class="unused-class3 transition_inverse">
             <?php echo $tweets_html; ?>
             </div>
                 <br><br><br>
@@ -294,7 +300,7 @@ $conn = null;
                 </div>
             </div>
         </div>   
-    
+
     </div>
 
 <script src="JS/connecter.js"></script>

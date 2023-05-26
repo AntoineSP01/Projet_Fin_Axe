@@ -3,7 +3,7 @@
 @import url('composants/popup.css');
 @import url('composants/setup.css');
 @import url('composants/profil.css');
-
+@import url('composants/Navbar.css');
 
 .wrapper {
   display: grid;
@@ -12,11 +12,14 @@
 }
 
 .one, .three {
-  background-color: #B2BF9F;
+  background-color: var(--main-bg-color_13);
 }
 
 .user {
   width: 25%;
+}
+
+.animation_gauche {
   animation-name: transition_gauche;
   animation-duration: 5s; 
 }
@@ -38,12 +41,11 @@
 }
 
 .two {
-  background-color: #96A086;
+  background-color: var(--main-bg-color_2);
 }
 
-.recherche {
-  border-radius: 50px;
-  background-color: #FFF6DE;
+.recherche  {
+  background-color: var(--main-button-color) !important;
   width: 70%;
   height: 3.5em;
   font-size: 1.4em;    
@@ -57,21 +59,21 @@
 }
 
 #logo {
-  margin-left: 20em;
+  margin-left: 26em;
   margin-top: 5em;
 }
 
 .menu {
-  background-color: #FFF6DE;
+  background-color: var(--main-button-color);
   border-radius: 25px;
   margin-left: 20.7em;
   margin-top: 2em;
-  width: 14em;
+  width: 16em;
   height: 4em;
   text-align: center;
   vertical-align:middle;
   line-height: 3em;
-  border: 1px solid  #FFF6DE;
+  border: none;
 }
 
 .menu p {
@@ -91,5 +93,181 @@
   font-size: 35px;
   text-align: center;
   margin-top: 10%;
+  margin-bottom: 7.3%;
 }
 
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+  #logo {
+    margin-left: 21em;
+  }
+
+  .menu {
+    margin-left: 10.7em;
+
+  }
+
+  .faireunmessage {
+    margin-top: 45em;
+    margin-left: 7em;
+  }
+
+  .nothing {
+    font-size: 25px;
+  } 
+
+  .user h1 {
+    font-size: 32px;
+  }
+
+  .user h4 {
+    font-size: 22px;
+  }
+  
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+  #logo {
+    margin-left: 10em;
+  }
+
+  .menu {
+    margin-left: 5.7em;
+    width: 10em;
+    height: 3em;
+  }
+
+  .menu p {
+    font-size: 0.8em;
+  }
+
+  .faireunmessage {
+    margin-top: 45em;
+    margin-left: 7em;
+  }
+
+  .nothing {
+    font-size: 25px;
+  } 
+
+  .user h1 {
+    font-size: 26px;
+  }
+
+  .user h4 {
+    font-size: 18px;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  #logo {
+    margin-left: 10em;
+  }
+
+  .menu {
+    margin-left: 5.7em;
+    width: 7.5em;
+    height: 3em;
+  }
+
+  .menu p {
+    font-size: 0.8em;
+  }
+
+  .faireunmessage {
+    margin-top: 45em;
+    margin-left: 0.5em;
+  }
+
+  .nothing {
+    font-size: 25px;
+  } 
+
+  .user {
+    width: 130px;
+  }
+
+  .user h1 {
+    text-align: start;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .user h4 {
+    font-size: 10px;
+    text-align: start;
+    margin-left: 10px;
+  }
+
+  .wrapper {
+    grid-template-columns: 0.8fr 3fr 0.5fr;
+  }
+  
+  .display {
+    display: none;
+  }
+
+  .recherche  {
+    height: 2.5em;
+    font-size: 1em;    
+  }
+
+
+}
+
+@media screen and (max-width: 767px) {
+  #logo {
+    margin-left: 10em;
+  }
+
+  .menu {
+    margin-left: 5.7em;
+    width: 7.5em;
+    height: 3em;
+  }
+
+  .menu p {
+    font-size: 0.8em;
+  }
+
+  .faireunmessage {
+    margin-top: 0em;
+    margin-left: 0em;
+  }
+
+  .nothing {
+    font-size: 25px;
+  } 
+
+  .user {
+    width: 300px;
+    margin-bottom: 100px;
+  }
+
+  .user h1 {
+    text-align: start;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .user h4 {
+    font-size: 15px;
+    text-align: center;
+    margin-left: 10px;
+  }
+
+  .wrapper {
+    grid-template-columns: 3fr ;
+  }
+  
+  .display {
+    display: none;
+  }
+
+  .recherche  {
+    height: 2.5em;
+    font-size: 1em;    
+  }
+
+
+}

@@ -1,5 +1,5 @@
 
-types = {
+tag = {
         "Nature" : [0, 128, 0],
         "Divertissement" : [255, 0, 0],
         "Cinéma" : [79, 79, 234],

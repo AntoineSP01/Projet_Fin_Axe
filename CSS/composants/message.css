@@ -1,41 +1,39 @@
 .message {
-    border: 2px solid #FFF6DE;
-    margin-top: 8%;
-    margin-left: 10%; 
-    margin-right: 10%; 
-    border-radius: 18px;
-    background-color: #FFF6DE;
-    color: #1F1D1E;
-  }
+  border: 2px solid var(--main-button-color);
+  margin-top: 8%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 18px;
+  background-color: var(--main-button-color);
+  color: var(--main-color);
+}
 
-.image-ronde{
-    width : 90px; 
-    height : 90px;
-    border: none;
-    -moz-border-radius : 45px;
-    -webkit-border-radius : 45px;
-    border-radius : 45px;
-  }
+.image-ronde {
+  width: 90px;
+  height: 90px;
+  border: none;
+  border-radius: 45px;
+}
 
 .entete {
   display: grid;
   grid-template-columns: 7em 1fr 1fr;
-  
   margin-top: 4%;
-  margin-left: 8%; 
-  margin-right: 8%; 
-  height: 6em;
+  margin-left: 8%;
+  margin-right: 8%;
+  height: 7.5em;
   align-items: center;
+  border-bottom: 2px solid var(--main-color);
 }
 
 .suivre {
-  background-color: #B2BF9F;
-  border: 2px solid #B2BF9F;
+  background-color: var(--main-bg-color_13);
+  border: 2px solid var(--main-bg-color_13);
   border-radius: 15px;
   height: 2em;
   width: 6em;
   text-align: end;
-  margin-left: 10.5em;
+  margin-left: 80%;
 }
 
 .suivre img {
@@ -51,7 +49,7 @@
   margin-right: 0.5em;
 }
 
-.nomheure h2{
+.nomheure h2 {
   margin-bottom: -0.5em;
   font-weight: 800;
   font-size: xx-large;
@@ -62,29 +60,24 @@
   font-size: small;
 }
 
-hr {
-  width: 40em;
-  margin-top: 1em;
-  color: #1F1D1E;
-}
 
 .texte {
-  margin-left: 8%; 
-  margin-right: 8%; 
-  margin-top: 2em;
-  font-size: 1.2em;
+  margin-left: 9%;
+  margin-right: 9%;
+  margin-top: 1em;
+  font-size: 1.4em;
   font-weight: 200;
 }
 
 .logo {
   padding: 1.5em;
-  margin-left: 28em;
+  margin-left: 70%;
 }
 
 .logo img {
   width: 2em;
   height: 2em;
-  margin-right: 1.5em;
+  margin-left: 1.5em;
 }
 
 .messagesuivant {
@@ -94,12 +87,209 @@ hr {
 #dustbin {
   width: 2em;
   height: 3em;
+  margin-bottom: -6px;
 }
 
 .container_media {
   height: 200px;
 }
+
 .media {
   max-height: 100%;
   width: auto;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+  .logo {
+    padding: 0.5em;
+    margin-left: 50%;
+  }
+
+  .suivre {
+    margin-left: 30%;
+  }
+  
+  .nomheure h2 {
+    margin-bottom: -0.5em;
+    font-weight: 800;
+    font-size: 26px;
+  }
+
+  .nomheure p {
+    font-size: 20px;
+  }
+
+  .messagesuivant {
+    margin-top: 5%;
+  }
+
+  .container_media {
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .logo {
+    padding: 1em;
+    margin-left: 50%;
+  }
+
+  .suivre {
+    margin-left: 30%;
+  }
+  
+  .nomheure h2 {
+    margin-bottom: -1.3em;
+    font-size: 18px;
+  }
+
+  .nomheure p {
+    font-size: 13px;
+  }
+
+  .messagesuivant {
+    margin-top: 5%;
+  }
+
+  .container_media {
+    height: 100px;
+  }
+
+  .image-ronde {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .entete {
+    display: grid;
+    grid-template-columns: 4em 1fr 1fr;
+    height: 5em;
+  }
+
+  .texte {
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-top: 0.5em;
+    font-size: 1em;
+  }
+
+  .logo {
+    padding: 1em;
+    margin-left: 50%;
+  }
+
+  #dustbin {
+    width: 1.5em;
+    height: 2.5em;
+  }
+  
+  .logo img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 0.7em;
+  }
+
+  .suivre {
+    height: 1.5em;
+    width: 5em;
+    text-align: end;
+    margin-left: 20%;
+  }
+  
+  .suivre img {
+    height: 2em;
+    width: 2em;
+    margin-top: -0.6em;
+    margin-right: 3em;
+  }
+  
+  .suivre p {
+    margin-top: -2.1em;
+    font-weight: bolder;
+    margin-right: 0.5em;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    padding: 1em;
+    margin-left: 50%;
+  }
+
+  .suivre {
+    margin-left: 30%;
+  }
+  
+  .nomheure h2 {
+    margin-bottom: -1.3em;
+    font-size: 18px;
+  }
+
+  .nomheure p {
+    font-size: 13px;
+  }
+
+  .messagesuivant {
+    margin-top: 5%;
+  }
+
+  .container_media {
+    height: 90px;
+  }
+
+  .image-ronde {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .entete {
+    display: grid;
+    grid-template-columns: 4em 1fr 1fr;
+    height: 5em;
+  }
+
+  .texte {
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-top: 0.5em;
+    font-size: 1em;
+  }
+
+  .logo {
+    padding: 1em;
+    margin-left: 50%;
+  }
+  
+  .logo img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 0.7em;
+  }
+
+  #dustbin {
+    width: 1.5em;
+    height: 2.5em;
+  }
+
+  .suivre {
+    height: 1.5em;
+    width: 5em;
+    text-align: end;
+    margin-left: 20%;
+  }
+  
+  .suivre img {
+    height: 2em;
+    width: 2em;
+    margin-top: -0.6em;
+    margin-right: 3em;
+  }
+  
+  .suivre p {
+    margin-top: -2.1em;
+    font-weight: bolder;
+    margin-right: 0.5em;
+    font-size: 13px;
+  }
 }

@@ -1,34 +1,38 @@
 .baniere img {
     width: 100%;
-    height: 500px;
+    height: 450px;
 }
 
 .photoprofil {
-    width : 180px; 
-    height : 180px;
-    
-    -moz-border-radius : 90px;
-    -webkit-border-radius : 90px;
-    border-radius : 90px;
+    width : 150px; 
+    height : 150px;
+    border-radius : 75px;
 
     margin-top: -7%;
     margin-left: 7%;
 }
 
+.photoprofil img {
+    border: 3px solid black;
+}
+
 .pseudoprofil {
     font-size: 320%;
     margin-left: 27%;
-    margin-top: -8%;
+    margin-top: -10%;
+
+    -webkit-text-stroke: 1px white; /* largeur et couleur */
 }
 
 .nomprofil {
     margin-left: 10%;
-    margin-top: 4%;
+    margin-top: 6%;
 }
 
 #modifierprofil {
     margin-left: 75%;
-    margin-top: -18%;
+    margin-top: -27%;
+    border: 2px solid black;
 }
 
 .biographie {
@@ -54,18 +58,18 @@
 }
 
 #bouton_own {
-    background-color: #FFF6DE;
+    background-color: var(--main-button-color);
     width: 100%;
     height: 4.8em;
     border-right: 1.5px solid black;
-    border: 1.5px solid #96A086;
+    border: 1.5px solid var(--main-bg-color_2);
 }
 
 #bouton_like {
-    background-color: #96A086;
+    background-color: var(--main-bg-color_2);
     width: 100%;
     height: 4.8em;
-    border: 1.5px solid #96A086;
+    border: 1.5px solid var(--main-bg-color_2);
     border-left: 1.5px solid black;
 }
 
@@ -78,3 +82,56 @@
 }
 
 
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+    .photoprofil {
+        width : 110px; 
+        height : 110px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+    .photoprofil {
+        width : 110px; 
+        height : 110px;
+    }
+
+    .pseudoprofil {
+        font-size: 250%;
+    }
+
+    .baniere img {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .photoprofil {
+        width : 110px; 
+        height : 110px;
+    }
+
+    .pseudoprofil {
+        font-size: 250%;
+    }
+
+    .baniere img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .photoprofil {
+        width : 110px; 
+        height : 110px;
+    }
+
+    .pseudoprofil {
+        font-size: 250%;
+        margin-left: 35%;
+        margin-top: -12%;
+    }
+
+    .baniere img {
+        height: 250px;
+    }
+}

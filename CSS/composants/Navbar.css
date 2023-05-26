@@ -1,0 +1,96 @@
+nav {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--main-bg-color_13);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border: 2px black;
+}
+
+nav a{
+    padding: 8px 8px 8px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--main-button-color);
+}
+
+#openbtn {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius : 25px;
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--main-bg-color_2);
+    color: #FFF6DE;
+    margin-left: 1em;
+    margin-top: 3em;
+ 
+}
+
+#openbtn_480 {
+    border: 2px solid black;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius : 25px;
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: var(--main-bg-color_2);
+    color: #FFF6DE;
+    margin-right: 0.2em;
+    margin-top: 1em;
+    
+}
+
+#openbtn:hover {
+    background-color: #444;
+}
+
+
+#openbtn_480:hover {
+    background-color: #444;
+}
+
+.deconnexion {
+    width: 100%;
+    text-align: start;
+    background-color: var(--main-bg-color_13);
+    border: var(--main-bg-color_13);
+}
+
+.deconnexion a{
+    font-size: 19px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    #openbtn {
+        display: block;
+    }
+
+    #openbtn_480 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #openbtn_480 {
+        display: block;
+    }
+
+    .one, .three{
+        display: none;
+    }
+}

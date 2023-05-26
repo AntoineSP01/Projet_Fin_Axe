@@ -10,12 +10,13 @@
 }
 
 a {
-  text-decoration: none;
-  color: #1F1D1E;
+  text-decoration: none !important;
+  color: black !important;
 }
 
+
 .fixed {
-  position: fixed;
+  position: fixed !important;
 }
 
 body {
@@ -23,3 +24,11 @@ body {
   color: #1F1D1E;
   cursor: default;
 }
+
+:root {
+  --main-bg-color_2: #96A086;
+  --main-bg-color_13: #B2BF9F;
+  --main-button-color: #FFF6DE;
+  --main-color: #1F1D1E;
+}
+
