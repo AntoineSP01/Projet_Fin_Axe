@@ -30,29 +30,29 @@ Une liste des technologies utilisées dans le cadre du projet :
 
 ### Organisation des dossiers
 
-CSS > style.css : contient les styles de base.
-CSS > composants > message.css : contient les styles des message affichés.
-CSS > composants > Navbar.css : contient les styles de la navbar.
-CSS > composants > popup.css : contient les styles des popups.
-CSS > composants > profil.css : contient les styles de la page profil.php.
-CSS > composants > setup.css : contient les styles utilisés sur tous les pages du site.
-CSS > composants > tag.css : contient les styles des tags.
+- CSS > style.css : contient les styles de base.
+- CSS > composants > message.css : contient les styles des message affichés.
+- CSS > composants > Navbar.css : contient les styles de la navbar.
+- CSS > composants > popup.css : contient les styles des popups.
+- CSS > composants > profil.css : contient les styles de la page profil.php.
+- CSS > composants > setup.css : contient les styles utilisés sur tous les pages du site.
+- CSS > composants > tag.css : contient les styles des tags.
 
-Image > Continent les images utilisées dans les messages.
+- Image > Continent les images utilisées dans les messages.
 
-IOT > Contient et les fichier lié à un objet connecté que je n’ai pas fait.
+- IOT > Contient et les fichier lié à un objet connecté que je n’ai pas fait.
 
-JS : contient tous les scripts pour animer le site.
+- JS : contient tous les scripts pour animer le site.
 
-Media > Bannière : contient toutes les bannières des utilisateurs.
-Media > PhotoProfil : contient toutes les photos de profil des utilisateurs.
-Media > Tweet : contient tous les médias que des utilisateurs mettent dans leurs tweets.
+- Media > Bannière : contient toutes les bannières des utilisateurs.
+- Media > PhotoProfil : contient toutes les photos de profil des utilisateurs.
+- Media > Tweet : contient tous les médias que des utilisateurs mettent dans leurs tweets.
 
-Traitement > Contient tous les fichiers qui vont servir a traiter les données.
-index.php : création et affichage de la page d’acceuil.
-connecter.php : création et affichage de la page après s’être connecté.
-recherche.php : création et affichage de la page lorsque l’on fait une recherche.
-profil.php : création et affichage de la page de profil des utilisateurs.
+- Traitement > Contient tous les fichiers qui vont servir a traiter les données.
+- index.php : création et affichage de la page d’acceuil.
+- connecter.php : création et affichage de la page après s’être connecté.
+- recherche.php : création et affichage de la page lorsque l’on fait une recherche.
+- profil.php : création et affichage de la page de profil des utilisateurs.
 
 
 
