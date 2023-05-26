@@ -5,7 +5,7 @@ Site web Lyfe. Fin prévue : 25 mai 2023.
 
 1. [Informations générales](#information_générales)
 2. [Technologies](#technologies)
-3. [Dossier-Organisation](#dossier_organisation)
+3. [Dossier-Organisation](#Organisation_des_dossiers)
 4. [Installation](#installation)
 5. [Auteur](#auteur)
 
@@ -56,7 +56,7 @@ profil.php : création et affichage de la page de profil des utilisateurs.
 
 
 
-### Installation de l'application
+### Installation
 
 Localhost [WINDOWS] : veuillez télécharger tous les fichiers et double-cliquer sur index.php. Certaines fonctionnalités nécessitant l'utilisation de Php peuvent ne pas fonctionner. Si vous souhaitez travailler localement, suivez les étapes suivantes :
 
