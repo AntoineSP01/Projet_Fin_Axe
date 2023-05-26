@@ -1,6 +1,7 @@
+# Lyfe
 Site web Lyfe. Fin prévue : 25 mai 2023.
  
-Table des matières
+## Table des matières
 
 [Informations générales](#information_générales)
 [Technologies](#technologies)
@@ -9,11 +10,11 @@ Table des matières
 [Auteur](#auteur)
 
  
-Informations générales
+### Informations générales
 
 Ce site web est ma propriété. Il a été créé pour un projet étudiant. Il ne peut être copié. Il a pour but de mettre des gens en relation entre eux à travers un site de micro-blogging.
 
-Technologies
+### Technologies
 
 Une liste des technologies utilisées dans le cadre du projet :
 PHP
@@ -27,7 +28,7 @@ Visual Studio Code : environnement de développement.
 
  
 
-Organisation des dossiers
+### Organisation des dossiers
 
 CSS > style.css : contient les styles de base.
 CSS > composants > message.css : contient les styles des message affichés.
@@ -53,22 +54,14 @@ connecter.php : création et affichage de la page après s’être connecté.
 recherche.php : création et affichage de la page lorsque l’on fait une recherche.
 profil.php : création et affichage de la page de profil des utilisateurs.
 
- 
 
- 
 
- 
-
-Installation de l'application
+### Installation de l'application
 
 Localhost [WINDOWS] : veuillez télécharger tous les fichiers et double-cliquer sur index.php. Certaines fonctionnalités nécessitant l'utilisation de Php peuvent ne pas fonctionner. Si vous souhaitez travailler localement, suivez les étapes suivantes :
 
- 
-
 Aller voir le site de Laragon.
 
- 
-
-Auteur
+### Auteur
 
 Ce site web a été créé par Antoine Schmerber-Perraud de février à mai 2023. Si vous rencontrez des difficultés à l'utiliser, n'hésitez pas à me contacter à l'adresse suivante : antoine.schmerber-perraud@edu.devinci.fr.
