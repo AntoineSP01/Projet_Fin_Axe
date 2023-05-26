@@ -3,9 +3,9 @@ Site web Lyfe. Fin prévue : 25 mai 2023.
  
 ## Table des matières
 
-1. [Informations générales](#information_générales)
+1. [Informations générales](#information-générales)
 2. [Technologies](#technologies)
-3. [Organisation des dossiers](#Organisation_des_dossiers)
+3. [Organisation des dossiers](#Organisation-des-dossiers)
 4. [Installation](#installation)
 5. [Auteur](#auteur)
 
