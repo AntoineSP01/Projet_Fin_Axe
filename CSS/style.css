@@ -52,6 +52,18 @@
   text-align: center;
   display: block;
   margin: 6% auto;
+  color: var(--main-color);
+}
+
+.recherche2  {
+  background-color: #FFF6DE !important;
+  width: 70%;
+  height: 3.5em;
+  font-size: 1.4em;    
+  text-align: center;
+  display: block;
+  margin: 6% auto;
+  color: var(--main-color);
 }
 
 .pseudotweet {
@@ -78,10 +90,11 @@
 
 .menu p {
   font-size: 1.4em;
+  color: var(--main-color);
 }
 
 .menu:hover {
-  border: 2px solid #1F1D1E;
+  border: 2px solid var(--main-color  );
 }
 
 .faireunmessage {

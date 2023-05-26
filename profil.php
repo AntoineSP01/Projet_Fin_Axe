@@ -81,7 +81,7 @@ if ($result->rowCount() > 0) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,7 +102,7 @@ if ($result->rowCount() > 0) {
                 </div>
                 <div>
                     <p>
-                        <textarea id="message" type="text" placeholder="Votre message" name="contenu" class="tweet"></textarea>
+                        <textarea id="message" placeholder="Votre message" name="contenu" class="tweet"></textarea>
                     </p>
                 </div>
                 <div id="tag">
@@ -160,7 +160,7 @@ if ($result->rowCount() > 0) {
             <h2>Souhaitez vous vraiment supprimer ce tweet ?</h2>
             <div class="choixsupprimer">
                 <div>
-                    <a id="deletebutton"><button>oui</button></a>
+                    <a id="deletebutton">oui</a>
                 </div>
                 <div>
                     <button id="exit">non </button>
@@ -171,11 +171,11 @@ if ($result->rowCount() > 0) {
     
     <nav id="mySidebar">
         <a href="javascript:void(0)" onclick="closeNav()">Close</a>
-        <a href="connecter.php"><p>Explorer</p></a>
-        <a href="profil.php?pseudo=<?php echo urlencode($_SESSION['pseudo']); ?>"><p>Mon profil</p></a>
-        <a href="#">Paramètre</a>
+        <a href="   connecter.php"><p>Explorer</p></a>
+        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>"><p>Mon profil</p></a>
+        <a id="dark-mode-toggle">NightMode</a>
         <form action="Traitement/deconnexion.php" method="POST">
-            <button class="deconnexion " type="submit"><p><a>Déconnexion</a> </p></button>
+            <button class="deconnexion" type="submit"><a>Déconnexion </a></button>
         </form>
     </nav>
 
@@ -186,12 +186,12 @@ if ($result->rowCount() > 0) {
         </div>
         <br><br><br>
         <a href="javascript:void(0)" onclick="closeNav_480()">Close</a>
-        <a href="connecter.php"><p>Explorer</p></a>
-        <a href="profil.php?pseudo=<?php echo urlencode($_SESSION['pseudo']); ?>"><p>Mon profil</p></a>
-        <a href="parametre.php">Paramètre</a>
-        <button class="deconnexion faireunmessage"><p><a >Faire un message</a></p></button>
+        <a href="connecter.php">Explorer</a>
+        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>">Mon profil</a>
+        <a id="dark-mode-toggle1">NightMode</a>
+        <a ><button class="deconnexion faireunmessage">Faire un message</button></a>
         <form action="Traitement/deconnexion.php" method="POST">
-            <button class="deconnexion " type="submit"><p><a>Déconnexion</a> </p></button>
+            <a><button class="deconnexion" type="submit">Déconnexion </button></a>
         </form>
     </nav>
 
@@ -203,7 +203,7 @@ if ($result->rowCount() > 0) {
                     <input type="text" name="recherche" placeholder="Recherche" class="recherche">
                 </form>
                 <br>
-                <button class="menu faireunmessage popup_tweet"><p>Faire un message</p></button>
+                <button class="menu faireunmessage popup_tweet">Faire un message</button>
             </div>
         </div>
 
@@ -245,7 +245,7 @@ if ($result->rowCount() > 0) {
             </div>
 
             <div  class="like">
-                <p class='nothing'> Cette fonctionnalité est en cours de développement, n'hésitez pas à revenir plus tard</p>
+                <p class='nothing'> Cette fonctionnalitée est en cours de développement, n'hésitez pas à revenir plus tard</p>
             </div>
                     
             
@@ -261,17 +261,17 @@ if ($result->rowCount() > 0) {
                     </div>
 
                     <div>
-                        <a href="connecter.php"><button class="menu"><p>Explorer</p></button></a>
+                        <a href="connecter.php"><button class="menu">Explorer</button></a>
                     </div>
                     <div>
-                        <a href="profil.php?pseudo=<?php echo urlencode($_SESSION['pseudo']); ?>"><button class="menu"><p>Mon profil</p></button></a>
+                        <button class="menu"><a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>">Mon profil</a></button>
                     </div>
                     <div>
-                        <button class="menu"><p>Paramètre</p></button>
+                        <button id="dark-mode-toggle2" class="menu">Night Mode</button>
                     </div>
                     <div>
                         <form action="Traitement/deconnexion.php" method="POST">
-                            <button class="menu" type="submit"><p>Déconnexion</p></button>
+                            <button class="menu" type="submit">Déconnexion</button>
                         </form>
                     </div>
                 </div>
@@ -287,5 +287,6 @@ if ($result->rowCount() > 0) {
 <script src="JS/modifierprofil.js"></script>
 <script src="JS/profil.js"></script>
 <script src="JS/Navbar.js"></script>
+<script src="JS/night.js"></script>
 </body>
 </html>

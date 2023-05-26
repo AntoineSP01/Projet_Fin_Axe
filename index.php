@@ -19,7 +19,7 @@ include_once 'Traitement/affichagetweet.php';
      <div class="popup">
         <div class="popup-content">
             <span class="popup-close"></span>
-            <h2>Connectez vous pour continuer ou inscrivez vous !</h2>
+            <h2>Connectez-vous pour continuer ou inscrivez-vous !</h2>
             <div>
                 <a class="popup-buttonconnexion"><p>Se connecter</p></a>
             </div>
@@ -36,16 +36,16 @@ include_once 'Traitement/affichagetweet.php';
                 <div class="row">
                     <div class="col mb-3">
                         <p>
-                            <input type="email" class="recherche form-control" name="mail" placeholder="Adresse mail" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="email" class="recherche2 form-control" name="mail" placeholder="Adresse mail" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </p>
                     </div>
                     <div class="col mb-3">
                         <p>
-                            <input type="password" placeholder="Mot de passe" name="mot_de_passe" class=" recherche form-control" id="exampleInputPassword1">
+                            <input type="password" placeholder="Mot de passe" name="mot_de_passe" class=" recherche2 form-control" id="exampleInputPassword1">
                         </p>
                     </div>
                 </div>
-                    <button type="submit" value="Se connecter" class="btn btn-primary recherche confirmer" id="confirmer">Se connecter</button>
+                    <button type="submit" value="Se connecter" class="btn btn-primary recherche2 confirmer" id="confirmer">Se connecter</button>
                 <div>
                     <p class="inscription">S'inscrire</p>
                 </div>
@@ -60,35 +60,35 @@ include_once 'Traitement/affichagetweet.php';
                 <div class="row">
                     <div class="col mb-3">
                         <p>
-                            <input type="texte" class="form-control recherche" name="nom" placeholder="Nom + Prénom" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="texte" class="form-control recherche2" name="nom" placeholder="Nom + Prénom" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </p>
                     </div>
                     <div class="col mb-3">
                         <p>
-                            <input type="texte" class="form-control recherche" name="pseudo" placeholder="Pseudo" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="texte" class="form-control recherche2" name="pseudo" placeholder="Pseudo" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </p>
                     </div>
                 </div>
                 <div class="mb-3">
                     <p>
-                        <input type="email" class="form-control recherche" name="mail" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control recherche2" name="mail" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </p>
                 </div>
                 <div class="row">
                     <div class="col mb-3"> 
                         <p>
-                            <input type="password" class="form-control recherche" name="motdepasse" placeholder="Mot de passe" id="exampleInputPassword1">
+                            <input type="password" class="form-control recherche2" name="motdepasse" placeholder="Mot de passe" id="exampleInputPassword1">
                         </p>
                     </div>
                     <div class="col mb-3">
                         <p>
-                            <input type="password" class="form-control recherche" name="confmotdepasse" placeholder="Confirmation du mot de passe" id="exampleInputPassword1">
+                            <input type="password" class="form-control recherche2" name="confmotdepasse" placeholder="Confirmation du mot de passe" id="exampleInputPassword1">
                         </p>
                     </div>
                 </div>
                 
                 
-                <button type="submit" value="S'inscrire" class="btn btn-primary recherche confirmer" id="confirmer" >S'inscrire</button>
+                <button type="submit" value="S'inscrire" class="btn btn-primary recherche2 confirmer" id="confirmer" >S'inscrire</button>
             </form>
 
             <div>
@@ -99,9 +99,9 @@ include_once 'Traitement/affichagetweet.php';
 
     <nav id="mySidebar">
         <a href="javascript:void(0)" onclick="closeNav()">Close</a>
-        <a href="index.php"><p>Explorer</p></a>
-        <a href="#">Paramètre</a>
-        <button class="deconnexion button_conn_inscr"><a><p>Connexion/Inscription</p></a></button>
+        <a href="index.php">Explorer</a>
+        <a id="dark-mode-toggle">NightMode</a>
+        <button class="deconnexion button_conn_inscr"><a>Connexion/Inscription</a></button>
     </nav>
 
     <nav id="Sidebar">
@@ -110,9 +110,9 @@ include_once 'Traitement/affichagetweet.php';
                 <h4>Découvrez, inspirez, trouvez votre place dans notre univers. </h4>
         </div>
         <a href="javascript:void(0)" onclick="closeNav_480()">Close</a>
-        <a href="index.php"><p>Explorer</p></a>
-        <a href="#">Paramètre</a>
-        <button class="deconnexion button_conn_inscr_1"><a><p>Connexion/Inscription</p></a></button>
+        <a href="index.php">Explorer</a>
+        <a id="dark-mode-toggle1">NightMode</a>
+        <button class="deconnexion button_conn_inscr_1"><a>Connexion/Inscription</a></button>
         
     </nav>
 
@@ -133,7 +133,7 @@ include_once 'Traitement/affichagetweet.php';
                 </form>
             </div>
 
-            <div class="unused-class2 transition" id="tag">
+            <div class="unused-class2 transition tag" >
                 <div id="Nature">                
                     <form action="connecter.php" method="GET"> 
                         <input type="hidden" name="tag" value="Nature">
@@ -223,13 +223,13 @@ include_once 'Traitement/affichagetweet.php';
                         <a href="index.php"><img src="Image/Logo.jpg" alt="logo" class="image-ronde" id="logo"></a>
                     </div>
                     <div>
-                        <a href="index.php"><button class="menu"><p>Explorer</p></button></a>
+                        <a href="index.php"><button class="menu">Explorer</button></a>
                     </div>
                     <div>
-                        <button class="menu"><p>Paramètre</p></button>
+                        <button id="dark-mode-toggle2" class="menu">Night Mode</button>
                     </div>
                     <div>
-                        <button class="menu button_conn_inscr_2"><p>Connexion/Inscription</p></button>
+                        <button class="menu button_conn_inscr_2">Connexion/Inscription</button>
                     </div>
                 </div>        
             </div> 
@@ -238,6 +238,7 @@ include_once 'Traitement/affichagetweet.php';
     
 <script src="JS/script.js"></script>
 <script src="JS/Navbar.js"></script>
+<script src="JS/night.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>

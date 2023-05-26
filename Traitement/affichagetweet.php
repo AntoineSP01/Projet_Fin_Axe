@@ -69,4 +69,3 @@ try {
 $conn = null;
 
 ?>
-<img src="../Media/Tweet/a.png" alt="" >

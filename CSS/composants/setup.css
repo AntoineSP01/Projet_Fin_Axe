@@ -11,7 +11,7 @@
 
 a {
   text-decoration: none !important;
-  color: black !important;
+  color: var(--main-color) !important;
 }
 
 
@@ -21,7 +21,7 @@ a {
 
 body {
   font-family: commission;
-  color: #1F1D1E;
+  color: var(--main-color);
   cursor: default;
 }
 
@@ -30,5 +30,12 @@ body {
   --main-bg-color_13: #B2BF9F;
   --main-button-color: #FFF6DE;
   --main-color: #1F1D1E;
+}
+
+body.dark {
+  --main-bg-color_2: #42473b;
+  --main-bg-color_13: #6b7260;
+  --main-button-color: #1f1d1e;
+  --main-color: #FFF6DE;
 }
 

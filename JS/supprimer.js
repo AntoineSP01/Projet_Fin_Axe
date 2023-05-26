@@ -4,7 +4,7 @@ const deletebutton = document.getElementById("deletebutton");
 const exit = document.getElementById("exit");
 
   function openpopup(id){
-    deletebutton.setAttribute("href", "supprimer_tweet.php?tweet_id=" + id);
+    deletebutton.setAttribute("href", "Traitement/supprimer_tweet.php?tweet_id=" + id);
     popup4.style.display = "block";
   }
   

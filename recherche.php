@@ -76,7 +76,7 @@ $conn = null;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -97,7 +97,7 @@ $conn = null;
                 </div>
                 <div>
                     <p>
-                        <textarea id="message" type="text" placeholder="Votre message" name="contenu" class="tweet"></textarea>
+                        <textarea id="message" placeholder="Votre message" name="contenu" class="tweet"></textarea>
                     </p>
                 </div>
                 <div id="tag">
@@ -118,7 +118,7 @@ $conn = null;
                 <div id="media">
                     <h3>Envie d'illustrer vos propos  :   <input type="file" name="media" accept=".jpg, .gif, .png"></h3>
                 </div>
-                <input type="hidden" name="current_page" value="connecter.php">
+                <input type="hidden" name="current_page" value="profil.php">
                 <div>
                     <input type="submit" value="Publier" class="recherche" id="confirmer" onclick="publish()">
                 </div>
@@ -127,27 +127,13 @@ $conn = null;
         </div>
     </div>
 
-    <div class="popupsupprimer">
-        <div class="popup-contentsupprimer">
-            <h2>Souhaitez vous vraiment supprimer ce tweet ?</h2>
-            <div class="choixsupprimer">
-                <div>
-                    <a id="deletebutton"><button>oui</button></a>
-                </div>
-                <div>
-                    <button id="exit">non </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <nav id="mySidebar">
         <a href="javascript:void(0)" onclick="closeNav()">Close</a>
-        <a href="   connecter.php"><p>Explorer</p></a>
-        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>"><p>Mon profil</p></a>
-        <a href="parametre.php">Paramètre</a>
+        <a href="connecter.php">Explorer</a>
+        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>">Mon profil</p></a>
+        <a id="dark-mode-toggle">NightMode</a>
         <form action="Traitement/deconnexion.php" method="POST">
-            <button class="deconnexion" type="submit"><p><a href="">Déconnexion</a> </p></button>
+            <button class="deconnexion " type="submit"><a>Déconnexion</a></button>
         </form>
     </nav>
 
@@ -158,12 +144,12 @@ $conn = null;
         </div>
         <br><br><br>
         <a href="javascript:void(0)" onclick="closeNav_480()">Close</a>
-        <a href="connecter.php"><p>Explorer</p></a>
-        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>"><p>Mon profil</p></a>
-        <a href="parametre.php">Paramètre</a>
-        <button class="deconnexion faireunmessage"><p><a >Faire un message</a></p></button>
+        <a href="connecter.php">Explorer</a>
+        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>">Mon profil</a>
+        <a id="dark-mode-toggle1">NightMode</a>
+        <button class="deconnexion faireunmessage"><a >Faire un message</a></button>
         <form action="Traitement/deconnexion.php" method="POST">
-            <button class="deconnexion" type="submit"><p><a href="">Déconnexion</a> </p></button>
+            <button class="deconnexion " type="submit"><a>Déconnexion</a></button>
         </form>
     </nav>
 
@@ -174,7 +160,7 @@ $conn = null;
                 <h1>Bienvenue <?php echo $user['users_pseudo']; ?> !</h1>
                 <h4>Vous êtes connecté.</h4>
                 <br>
-                <button class="menu faireunmessage popup_tweet"><p>Faire un message</p></button>
+                <button class="menu faireunmessage popup_tweet">Faire un message</button>
             </div>
         </div>
 
@@ -186,7 +172,7 @@ $conn = null;
                 </form>
             </div>
 
-            <div class="unused-class2" id="tag">
+            <div class="unused-class2 tag">
                 <div id="Nature">                
                     <form action="connecter.php" method="GET"> 
                         <input type="hidden" name="tag" value="Nature">
@@ -278,17 +264,17 @@ $conn = null;
                     </div>
 
                     <div>
-                        <a href="connecter.php"><button class="menu"><p>Explorer</p></button></a>
+                        <a href="connecter.php"><button class="menu">Explorer</button></a>
                     </div>
                     <div>
-                        <a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>"><button class="menu"><p>Mon profil</p></button></a>
+                        <button class="menu"><a href="profil.php?pseudo=<?php echo urlencode($user['users_pseudo']); ?>">Mon profil</a></button>
                     </div>
                     <div>
-                        <button class="menu"><p>Paramètre</p></button>
+                        <button id="dark-mode-toggle2" class="menu">Night Mode</button>
                     </div>
                     <div>
                         <form action="Traitement/deconnexion.php" method="POST">
-                            <button class="menu" type="submit"><p>Déconnexion</p></button>
+                            <button class="menu" type="submit">Déconnexion</button>
                         </form>
                     </div>
                 </div>
@@ -302,5 +288,6 @@ $conn = null;
 <script src="JS/supprimer.js"></script>
 <script src="JS/tag.js"></script>
 <script src="JS/Navbar.js"></script>
+<script src="JS/night.js"></script>
 </body>
 </html>

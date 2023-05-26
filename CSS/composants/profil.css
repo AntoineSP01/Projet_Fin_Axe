@@ -63,6 +63,7 @@
     height: 4.8em;
     border-right: 1.5px solid black;
     border: 1.5px solid var(--main-bg-color_2);
+    color: var(--main-color);
 }
 
 #bouton_like {
@@ -71,6 +72,7 @@
     height: 4.8em;
     border: 1.5px solid var(--main-bg-color_2);
     border-left: 1.5px solid black;
+    color: var(--main-color);
 }
 
 .own{
