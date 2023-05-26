@@ -17,14 +17,14 @@ Ce site web est ma propriété. Il a été créé pour un projet étudiant. Il n
 ### Technologies
 
 Une liste des technologies utilisées dans le cadre du projet :
-PHP
-HTML
-CSS
-JS
-[GitHub](https://github.com/)  : Service d'hébergement web et de sauvegarde
-[Figma](https://www.figma.com/)  : Editeur de graphiques vectoriels et outil de prototypage en ligne et collaboratif.
-[Laragon](https://laragon.org/) : serveur localhosts.
-Visual Studio Code : environnement de développement.
+- PHP
+- HTML
+ -CSS
+- JS
+- [GitHub](https://github.com/)  : Service d'hébergement web et de sauvegarde
+- [Figma](https://www.figma.com/)  : Editeur de graphiques vectoriels et outil de prototypage en ligne et collaboratif.
+- [Laragon](https://laragon.org/) : serveur localhosts.
+- Visual Studio Code : environnement de développement.
 
  
 
